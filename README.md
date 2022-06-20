@@ -15,6 +15,8 @@
 - Host your Heroku link as your live link on your created Github repository.
 
 
+![Optional Text](/static/pic/Screenshot_2022-06-20_23-31-16.png)
+
 
 ## Prerequisites
 
@@ -30,6 +32,9 @@
 - User can view their profile,
 - User can create  accounts 
 - Search for neighborhoods 
+
+![Optional Text](/static/pic/Screenshot_2022-06-20_23-31-38.png)
+
 
 
 

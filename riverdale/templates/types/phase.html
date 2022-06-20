@@ -1,0 +1,397 @@
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="/static/css/bulma.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/phase.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+
+{% endblock %}
+
+
+<!-- main -->
+{% for n in neighborhoods %}
+<div class="box">
+  <button class="button is-primary" ><a href="{% url 'home'%}">Home</a></button>
+<div class="div" style="text-align: center;">
+  <h6>{{n.title}}</h6> 
+<p>Located at {{n.location}}</p> 
+</div>
+</div>
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <div class="tile is-child box">
+
+          <!-- project -->
+         
+          <div class="card">
+            <div class="card-image">
+              {% for img in images %}
+              <figure style="text-align: center;" class="image is-4by1">
+                <img src="{{img.image.url}}"  alt="Placeholder image">
+              
+                  <!--bio  -->
+                  <p class="title is-3"></p>
+                  <mark>{{n.bi0}}</mark>
+                  <p class="subtitle is-6"></p>
+          {% endfor %}
+                 
+              </figure>
+              {% endfor %}
+            </div>
+            
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left"> </div>
+                <div class="media-content">
+                  <!--  -->
+                  <!-- images -->
+                  <div class="columns">
+                    <div class="column">
+                      <div class="div">
+                        <p class="subtitle is-6" style="font-weight: 800;">Schools</p>
+                        
+
+                          Richmond Dr Elementary
+                          W.C. Sullivan Middle School
+                          South Pointe High School
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="div">
+                        <p class="subtitle is-6" style="font-weight: 800;">Food & Drink</p>
+                        
+
+                          Salsarita's Fresh Mexican Grill
+                          NC Noodle Bar
+                          P W's Gourmet Ice Cream & Catering
+                          Island Grill & Pub
+                      </div>
+                      Second column
+                    </div>
+                    <div class="column">
+                      <div class="div">
+                        <p class="subtitle is-6" style="font-weight: 800;">Shopping</p>
+                        
+
+                        Harris Teeter
+                        Food Lion
+                        Publix
+                        Walmart
+                        Target
+                        Rock Hill Galleria Mall 
+                        Charlotte Premium
+                        Outlets 
+                        
+                      </div>
+                      Third column
+                    </div>
+                    <div class="column">
+                      <div class="div">
+                        <p class="subtitle is-6" style="font-weight: 800;">Hospital & Pharmacy</p>
+
+                        Piedmont Medical Center
+                        Hospital
+                        Walgreens
+                        CVS 
+                        
+                      </div>
+                      Fourth column
+                    </div>
+                  </div>
+                  <!-- images -->
+                  
+                </div>
+              </div>
+          
+              <div class="content">
+                <strong></strong>
+               </a>.
+                <!-- <a href="#">#css</a> <a href="#">#responsive</a> -->
+                <br>
+                <time datetime="2016-1-1"></time>
+              </div>
+            </div>
+          </div>
+         
+          <!-- project -->
+
+      </div>
+    </div>
+    <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">
+          <p class="title">Businessess</p>
+          <!-- design -->
+         <div class="box">
+          {% for b in businessess %}
+         <div class="div"><strong>{{b.b_name}} == </strong><span></span>
+          <strong>{{b.contacts}} , </strong>
+          <strong>{{b.email}}</strong></div>
+          {% endfor %}
+        </div>
+        
+            
+        </div>
+       
+        <div class="tile is-child box">
+          <!-- star rating -->
+          <h1>Business Contacts</h1>
+          <form method="Post" action="" role="form">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="" class="form-label">Business name</label>
+              <input class="input" Required name="b_name" type="text" placeholder="Business name">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input class="input" Required name="email" type="text" placeholder="Phone number">
+           </div>
+           <div class="mb-3">
+            <label for="" class="form-label">Phone number</label>
+            <input class="input" Required name="contacts" type="text" placeholder="Phone number">
+           </div>
+            <button type="submit" name="action" class="btn btn-danger">Post</button>
+        </form>  
+          
+        <div class="div">
+        </div>
+          
+          <!-- star rating -->
+        </div>
+      </div>
+  
+  </div>
+  <!-- posts -->
+{% for n in neighborhoods %}
+  <div class="tile  is-vertical is-parent">
+  <div class="tile is-child box">
+      <!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">Page Heading
+    <small>Secondary Text</small>
+  </h1>
+
+  <!-- Project One -->
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h3>Project One</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      <a class="btn btn-primary" href="#">View Project</a>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Project Two -->
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h3>Project Two</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
+      <a class="btn btn-primary" href="#">View Project</a>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Project Three -->
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h3>Project Three</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+      <a class="btn btn-primary" href="#">View Project</a>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Project Four -->
+  <div class="row">
+
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h3>Project Four</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+      <a class="btn btn-primary" href="#">View Project</a>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<!-- /.container -->
+   
+  </div>
+  </div>
+
+  <!-- posts -->
+      <!-- comments -->
+  
+      <article class="tile is-child notification is-primary">
+              
+      </form>
+      <p class="title"></p>
+      <p class="subtitle"></p>
+
+    <article>
+      <div>
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <!-- carousel -->
+
+              <section class="testimonial">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <ol class="carousel-indicators tabs">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                    <figure>
+                                        <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-01-179x179.png" class="img-fluid" alt="">
+                                    </figure>
+                                </li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                    <figure>
+                                        <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-02-306x306.png" class="img-fluid" alt="">
+                                    </figure>
+                                </li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                                    <figure>
+                                        <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-03-179x179.png" class="img-fluid" alt="">
+                                    </figure>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <div id="carouselExampleIndicators" data-interval="false" class="carousel slide" data-ride="carousel">
+                                <h3>WHAT OUR CLIENTS SAY</h3>
+                                <h1>TESTIMONIALS</h1>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="quote-wrapper">
+                                            <p>{{n.testimonials1}}</p>
+                                            <h3></h3>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="quote-wrapper">
+                                            <p>{{n.testimonials2}}</p>
+                                            <h3></h3>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="quote-wrapper">
+                                            <p>{{n.testimonials3}}</p>
+                                            <h3></h3>
+                                            <br>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <ol class="carousel-indicators indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+              <!-- carousel -->
+
+
+            </div>
+          </div>
+        </article>
+      </div>
+    </article>
+
+      </article>
+      {% endfor %}
+      <div class="box"></div>
+
+      <script>
+        $(document).ready(function(){
+  $(".testimonial .indicators li").click(function(){
+    var i = $(this).index();
+    var targetElement = $(".testimonial .tabs li");
+    targetElement.eq(i).addClass('active');
+    targetElement.not(targetElement[i]).removeClass('active');
+            });
+            $(".testimonial .tabs li").click(function(){
+                var targetElement = $(".testimonial .tabs li");
+                targetElement.addClass('active');
+                targetElement.not($(this)).removeClass('active');
+            });
+        });
+$(document).ready(function(){
+    $(".slider .swiper-pagination span").each(function(i){
+        $(this).text(i+1).prepend("0");
+    });
+});
+      </script>

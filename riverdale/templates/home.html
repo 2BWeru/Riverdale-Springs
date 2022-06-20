@@ -236,9 +236,6 @@ h2::after {
         <a class="navbar-item" href="#">
           Home
         </a>
-        <a class="navbar-item" href="{% url 'register' %}">
-          register
-        </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="">
             More
@@ -246,7 +243,7 @@ h2::after {
           <div class="navbar-dropdown is-boxed">
             {% if user.is_authenticated %}
             
-            <a class="navbar-item" href="{% url 'profile' %}">
+            <a class="navbar-item" href="{% url 'profile' user.id%}">
               <p>profile</p>
             </a>
            

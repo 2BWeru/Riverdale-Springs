@@ -55,7 +55,7 @@ def loginpage(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                login(request)
+                login(request,user)
                 return redirect('home')
 
             else:

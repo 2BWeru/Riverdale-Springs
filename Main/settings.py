@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'riverdale',
     'bootstrap3',
-    'registration',
     'cloudinary_storage',
     'cloudinary',
     
@@ -64,9 +63,7 @@ ROOT_URLCONF = 'Main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-             os.path.join(BASE_DIR, "templates")
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,7 +85,7 @@ WSGI_APPLICATION = 'Main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'riverdale21',
+        'NAME': 'riverdale2001',
         'USER': 'wamaitha',
     'PASSWORD':'river',
     }

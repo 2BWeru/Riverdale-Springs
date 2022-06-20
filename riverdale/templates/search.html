@@ -1,0 +1,24 @@
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="/static/css/bulma.min.css">
+{% endblock %}
+
+{% if neighborhood %}
+<div class="tile  is-vertical is-parent">
+    <div class="tile is-child box">
+        <div class="box">
+        </div>
+    {% for n in neighborhood %}
+            <p class="title"><a href="{% url 'phase' n.id %}">{{n.title}}</a></p>
+    {% endfor %}
+    {% else %}
+            <div class="block"></div>
+           
+    <p style="text-align:center"><mark>No project of search term {{message}}</mark></p>
+    {% endif %}
+          </div>
+          </div>  
+  </div>

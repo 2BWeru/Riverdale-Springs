@@ -66,9 +66,9 @@ def loginpage(request):
     return render(request,'login.html',context)
 
 # profile
-def profile(request):
+def profile(request,id):
     user=request.user
-    users=User.objects.all()
+    users=User.objects.filter(id=id)
 
     return render(request,'profile/profile.html',{'users':users,"user":user})
 
